@@ -1,0 +1,27 @@
+body {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.navbar-brand img {
+  margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+  color: #ff6600 !important;
+}
+
+h1,
+h3 {
+  color: #ff6600;
+}
+
+.btn-primary {
+  background-color: #ff6600;
+  border-color: #ff6600;
+}
+
+.btn-primary:hover {
+  background-color: #e65c00;
+  border-color: #e65c00;
+}
