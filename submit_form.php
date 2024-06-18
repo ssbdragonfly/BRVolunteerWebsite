@@ -4,19 +4,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $message = $_POST['message'];
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "Invalid email format";
         exit;
     }
-    $to = "bishtshaurya314@gmail.com";
-    $subject = "New Volunteer Inquiry";
-    $body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage:\n$message";
-    $headers = "From: $email";
-    if (mail($to, $subject, $body, $headers)) {
-        echo "Thank you! Your message has been sent.";
-    } else {
-        echo "Oops! Something went wrong.";
-    }
+
+    $data = [
+        'name' => $name,
+        'email' => $email,
+        'phone' => $phone,
+        'message' => $message
+    ];
+
+    file_put_contents('form_data.json', json_encode($data));
+    exec('python3 send_email.py');
+    
+    echo "Thank you! Sent!";
 } else {
     echo "Method not allowed.";
 }
