@@ -15,50 +15,35 @@
       <img src="assets/logo.png" alt="BestRunners" style="width:30px; height:30px;">
       BestRunners
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="calendar.html">Calendar</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="join.html">Join</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="needs.html">Needs</a>
-        </li>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+        <li class="nav-item"><a class="nav-link" href="join.html">Join</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="needs.html">Needs</a></li>
       </ul>
     </div>
   </nav>
   <div class="container mt-5">
     <h1>Join Us</h1>
-    <p>If you are interested in volunteering with BestRunners, please fill out the form below, and we will get back to
-      you with more information.</p>
-    <form>
+    <p>If you are interested in volunteering with BestRunners, please fill out the form below, and we will get back to you with more information.</p>
+    <form action="submit_form.php" method="post">
       <div class="form-group">
         <label for="name">Full Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter your full name">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
       </div>
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
       </div>
       <div class="form-group">
         <label for="phone">Phone Number</label>
-        <input type="text" class="form-control" id="phone" placeholder="Enter your phone number">
+        <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
       </div>
       <div class="form-group">
         <label for="message">Why do you want to volunteer with us?</label>
-        <textarea class="form-control" id="message" rows="3"></textarea>
+        <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
